@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR Task:4</title>
+    <style>
+        body{
+            background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Photos-Book-Wallpapers-HD.jpg);
+            background-size:1300px;
+            /* background-repeat: no-repeat; */
+        }
+.calculator {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  background-color:yellow;
+  border-style: solid;
+  border-color:aqua;
+  border-width: 2px;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+#result {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: aqua;
+  border-width: 2px;
+  
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-style: solid;
+  border-color: aqua;
+  border-width: 2px;
+  
+}
+
+button:nth-child(4n) {
+  background-color: #FF8C00;
+  color: white;
+}
+button:nth-child(4n):hover {
+  background-color:darkviolet;
+  color: white;
+}
+
+button:nth-child(4n-1) {
+  background-color: #008000;
+  color: white;
+}
+button:nth-child(4n-1):hover {
+  background-color:magenta;
+  color: white;
+}
+
+button:nth-child(4n-2) {
+  background-color: #0000FF;
+  color: white;
+}
+button:nth-child(4n-2):hover {
+  background-color:deeppink;
+  color: white;
+}
+
+button:nth-child(4n-3) {
+  background-color: #FF0000;
+  color: white;
+}
+button:nth-child(4n-3):hover {
+  background-color:deepskyblue;
+  color: white;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR </h1>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="buttons">
+      <button onclick="clearResult()">C</button>
+      <button onclick="deleteLastCharacter()">&#9003;</button>
+      <button onclick="calculate()">=</button>
+       <button onclick="appendCharacter('/')">/</button>
+      <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('*')">*</button>
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter('-')">-</button>
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="appendCharacter('+')">+</button>
+      <button onclick="appendCharacter('0')">0</button>
+      <button onclick="appendCharacter('.')">.</button>
+    
+    </div>
+  </div>
+  <script>
+    function clearResult() {
+  document.getElementById("result").value = "";
+}
+
+function deleteLastCharacter() {
+  let result = document.getElementById("result").value;
+  document.getElementById("result").value = result.slice(0, -1);
+}
+
+function appendCharacter(character) {
+  document.getElementById("result").value += character;
+}
+
+function calculate() {
+  let result = document.getElementById("result").value;
+  let answer = eval(result);
+  document.getElementById("result").value = answer;
+}
+</script>
+</body>
+</html>
